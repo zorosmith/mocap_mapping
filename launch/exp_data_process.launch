@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    
+
+    <node name="msg_syn_node" pkg="climbing_robot" type="msg_syn_node" output="screen"> 
+        <!-- param name="pcdListPath" type="string" value="/home/gordon/data/slam6d_data/thermolab/L2R_02/right_pointcloud_list.txt" / -->
+        <!-- param name="posePath" type="string" value="/home/gordon/data/slam6d_data/thermolab/L2R_02/rightPose_modify.txt" / -->
+        <param name="msg_syn_bag_path" type="string" value="/home/gordon/ros_ws/src/climbing_robot/data/msg_syn.bag" /> <!-- replace with your output folder -->
+        <!-- param name="Num" type="int" value="72" / -->
+    </node>
+
+    <node name="mapping_node" pkg="climbing_robot" type="mapping_node" output="screen"> 
+        <param name="cloud_topic" type="string" value="/Syn/cloud" />
+        <param name="pose_topic" type="string" value="/Syn/pose" />
+        <param name="min_range" type="double" value="1.0" />
+        <param name="max_range" type="double" value="5.0" />
+        <!-- param name="Num" type="int" value="72" / -->
+    </node>
+
+
+
+</launch>

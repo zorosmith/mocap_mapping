@@ -1,0 +1,2 @@
+msg_syn_node 同步激光雷达点云和motion capture数据；
+mapping_node 使用同步的数据构建地图；
